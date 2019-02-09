@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<title>Exercice 3 - débugger</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<div id='monstre' style="position:absolute; top:50px ; left: 100px">Monstre</div>
+		<div id=boutons><button id="gauche"><</button><button id="droite">></button></div>
+		<script>	
+			var e= new String("inutile")
+			var monstre = document.getElementById('monstre')
+			var div_boutons = document.getElementById('boutons')
+			
+			function deplace(x){
+				var position = monstre.style.left.replace('px','');
+                positionNumber = position.parseInt;
+				positionNumber = position*1 + x;
+				console.log(positionNumber)
+				monstre.style.left = positionNumber+'px'
+			}
+			
+			function gestionnaire_du_click(e){
+				var bouton = e.target.id;
+
+				if (bouton === "gauche"){
+					console.log("un pas vers la gauche")
+					deplace(-15)
+				}else{
+					console.log("un pas vers la droite")
+					deplace(15)
+				}
+			}
+			// la div contient les boutons. Donc lorsqu'on clique sur un bouton, on clique aussi sur la div.
+			div_boutons.addEventListener('click', gestionnaire_du_click)
+		</script>
+
+	</body>
+</html>

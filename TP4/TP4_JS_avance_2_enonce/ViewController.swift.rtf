@@ -1,0 +1,93 @@
+{\rtf1\ansi\deff0\deftab480
+
+{\fonttbl
+{\f000 Courier New;}
+{\f001 Courier New;}
+}
+
+{\colortbl
+\red000\green000\blue000;
+\red255\green255\blue255;
+\red000\green000\blue000;
+\red255\green255\blue255;
+}
+
+\f4390971\fs20\cb3\cf2 \highlight1\cf0 //\par
+//  ViewController.swift\par
+//  premiereInterface\par
+//\par
+//  Created by Othmane El Ayadi on 29/01/2018 et ASFAR Mohamed Raffique\par
+//  Copyright \u169? 2018 Othmane El Ayadi. All rights reserved.\par
+//\par
+\par
+import UIKit\par
+\par
+class ViewController: UIViewController \{\par
+    @IBOutlet weak var label: UILabel!\par
+    \par
+    @IBOutlet weak var slider: UISlider!\par
+    \par
+    @IBAction func actionSlider(_ sender: Any) \{\par
+        label.text = String(slider.value.rounded())\par
+        \par
+    \}\par
+    override func viewDidLoad() \{\par
+        super.viewDidLoad()\par
+        // Do any additional setup after loading the view, typically from a nib.\par
+    \}\par
+\par
+    override func didReceiveMemoryWarning() \{\par
+        super.didReceiveMemoryWarning()\par
+        // Dispose of any resources that can be recreated.\par
+    \}\par
+\par
+\par
+    @IBOutlet weak var buttonStop: UIButton!\par
+    @IBOutlet weak var Activity: UIActivityIndicatorView!\par
+    @IBAction func btnAction(_ sender: Any) \{\par
+        if (Activity.isAnimating) \{\par
+            Activity.stopAnimating();\par
+            buttonStop.setTitle("Stop" , for: .normal)\par
+        \}\par
+        else\{\par
+            Activity.startAnimating();\par
+            buttonStop.setTitle("Start", for: .normal)\par
+        \}\par
+    \}\par
+    \par
+    @IBOutlet weak var `switch`: UISwitch!\par
+    \par
+    @IBAction func switchAction(_ sender: Any) \{\par
+        if `switch`.isOn \{\par
+            buttonStop.isEnabled = false\par
+        \}\par
+        else \{\par
+            buttonStop.isEnabled = true\par
+        \}\par
+    \}\par
+    \par
+    @IBOutlet weak var segment: UISegmentedControl!\par
+    \par
+    @IBAction func segmentAction(_ sender: Any) \{\par
+        let n = segment.selectedSegmentIndex\par
+        switch n \{\par
+        case 0:\par
+            self.view.backgroundColor = UIColor.white\par
+            break\par
+        case 1:\par
+             self.view.backgroundColor = UIColor.blue\par
+            break\par
+        case 2:\par
+             self.view.backgroundColor = UIColor.red\par
+            break\par
+        case 3:\par
+             self.view.backgroundColor = UIColor.yellow\par
+            break\par
+            \par
+        default: break\par
+        \par
+        \}\par
+    \}\par
+\}\par
+\par
+}

@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<title>Exercice 1</title>
+		<meta charset="utf-8">
+		<style>
+			h1, h2, h3, input, span { display: none;}
+			.enonce { display: block; }	
+		</style>
+	</head>
+
+	<body>
+		<h1 class="enonce">Affiche les chiffres de 1 à 7. Mais aucun X. </h1>
+		<p class="enonce">Le dernier est optionnel. </p>
+		
+		<span>X</span><span>X</span><span>X</span><span>X</span><span>X</span><span>X</span><span>X</span><span>X</span><span>X</span><span>X</span><span>X X</span><h1>X</h1><span>X X</span><span>X</span><span>X</span><span>X</span><span>X</span><span>X</span><span>X</span><span>X</span><span>X     X</span><span>X</span><span>X  X</span><h1>X</h1><span>X</span><span>X</span>
+	
+		<h1 id="premier">1</h1>
+		<input name="prenom" type="text" value="2"/>
+		<h2>3</h2>
+		
+		<h1 id="deuxieme">X</h1>
+		<h2>4</h2>
+		<h2>5</h2>
+		<h2>6</h2>
+		
+		<h2 id="troisieme">	<span>7</span> </h2>
+
+		<span>X</span><span>X</span><span>X</span><span>X</span><span>X</span><span>X</span><span>X</span><span>X</span><span>X</span><span>X</span><span>X</span><h1>X    X</h1><span>X</span><span>X</span><h1>X</h1><span>X</span><span>X</span><span>X</span><span>X</span><span>X</span><span>X</span><span>X</span><span>X</span>
+		
+		<script>
+			// Ecris ci-dessous.
+			// Les seules méthodes autorisées sont getElementById(), getElementsByTagName() ou getElementsByName()
+
+            var h1Var = document.getElementById("premier");
+            h1Var.style.display="block";
+
+            var inputVar = document.getElementsByName("prenom");
+            inputVar[0].style.display="block";
+
+            var hVar = document.getElementsByTagName("h2");
+
+            for (var i=0; i<hVar.length;i++){
+                hVar[i].style.display="block";
+            }
+
+            var h7Var = document.getElementById("troisieme");
+            h7Var = h7Var.getElementsByTagName("span");
+            h7Var[0].style.display="block"
+
+			
+
+		</script>
+		
+	</body>
+	
+</html>

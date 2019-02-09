@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<title>Exercice 1 - Fermeture</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+
+		<script>
+			// création des boutons
+			var div_boutons = document.createElement('div')
+			
+			for (var i = 0; i < 10; i++) {
+				var bouton = document.createElement('button')
+				bouton.appendChild(document.createTextNode("B"))
+				div_boutons.appendChild(bouton)
+			}
+			
+			// ajout des boutons dans le DOM
+			document.body.appendChild(div_boutons)
+			
+			////////////////////////////////////////////////////////
+			/////////// Tu dois corriger ci-dessous uniquement /////
+			////////////////////////////////////////////////////////
+			var boutons = document.getElementsByTagName('button');
+
+			for (var i = 0; i < boutons.length; i++) {
+				var g = ( function(){
+                    var j = i;
+                    console.warn(j);
+                    return function () {
+                            alert('Bouton n°' + j);
+                        }
+				})();
+				boutons[i].addEventListener('click', g);
+			}
+		</script>
+
+	</body>
+</html>

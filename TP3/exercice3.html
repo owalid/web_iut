@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<meta charset='utf-8'/>
+	</head>
+	<body>
+		<script>
+			
+			// Q1 : Ecris ci-dessous le constructeur d’objet Animal. Il a 1 propriété (estomac de type tableau) et 1 méthode (mange).
+			// Regarde l'énoncé pour savoir ce qu'elle fait.
+
+			var Animal = function () {
+			    this.estomac = [];
+			    this.mange = function (food) {
+                    this.estomac.push(food)
+                }
+            };
+			
+			
+
+			// Interdiction de modifier les lignes ci-dessous
+			var unAnimal = new Animal;
+			unAnimal.mange("prune")
+			unAnimal.mange("champignon")
+			document.write('unAnimal a mangé : ' + unAnimal.estomac + '<br/>')
+
+			// Q2 : Ecris ci-dessous le constructeur d'objet Oiseau. Il hérite d'Animal et a une méthode supplémentaire : chante.
+			// Regarde l'énoncé pour savoir ce qu'elle fait.	
+			
+			
+			
+			
+
+			// Interdiction de modifier les lignes ci-dessous
+			var unOiseau = new Oiseau()
+			unOiseau.mange('graines')
+			document.write('unOiseau a mangé : ' + unOiseau.estomac + '<br/>')
+			unOiseau.chante()			
+		</script>
+	</body>
+</html>

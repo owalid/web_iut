@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>TP5</title>
+</head>
+<body>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="erreur" style="display: none">
+                    <p>Vous n'avez pas rempli correctement les champs du formulaire</p>
+                </div>
+            </div><br><br>
+            <div class="col-md-12">
+                <form>
+                    <div class="form-group">
+                        <label for="pseudo">Pseudo</label>
+                        <input type="text" id="pseudo" class="champ form-control" placeholder="Enter pseudo"><br><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="mdp">Mot de passe</label>
+                        <input type="password" id="mdp" class="champ form-control" placeholder="Enter Password"><br><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmation">Confirmation</label>
+                        <input type="password" id="confirmation" class="champ form-control"  placeholder="Enter Confirmation"><br><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="mail">E-mail</label><input type="email" id="mail" class="champ form-control" placeholder="Enter email"><br><br>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="envois" value="Envoyer">Envoyer</button>
+                    <button type="reset" class="btn btn-primary" id="rafraichir" value="Rafraichir">Rafraichir</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<script>
+    $(document).ready(function () {
+        var  $pseudo = $('#pseudo'),
+             $mot_de_passe = $('#mdp'),
+             $confirmation = $('#confirmation'),
+             $email = $('#mail'),
+             $reset = $('#rafraichir'),
+             $envoi = $('#envois'),
+             $erreur = $('#erreur'),
+             $champ = $('.champ');
+
+
+    $champ.keyup(function () {
+        if($(this).val().length < 5) {
+            $(this).css({
+                borderColor: 'red',
+                color: 'red'
+            })
+        }
+        else {
+            $(this).css({
+                borderColor: 'green',
+                color:'green'
+            })
+        }
+    });
+
+    $confirmation.keyup(function () {
+        if ($(this).val() !== $mot_de_passe.val()){
+            $(this).css({
+                borderColor: 'red',
+                color: 'red'
+            });
+        }
+        else {
+            $(this).css({
+                borderColor: 'green',
+                color: 'green'
+            });
+        }
+    });
+
+    function verifier(champ) {
+        if(champ.val() === ''){
+            $erreur.css('display', 'block');
+            champ.css({
+                borderColor:'red',
+                color:'red'
+            })
+        }
+    }
+
+    $envoi.click(function (e) {
+        e.preventDefault();
+
+        verifier($pseudo);
+        verifier($mot_de_passe);
+        verifier($confirmation);
+        verifier($email);
+    });
+
+    $reset.click(function () {
+        $champ.css({
+            borderColor: '#ccc',
+            color: '#555'
+        });
+        $erreur.css('display', 'none')
+    })
+
+    });
+</script>
+
+</body>
+</html>
+

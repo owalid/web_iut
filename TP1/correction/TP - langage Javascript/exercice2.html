@@ -1,0 +1,27 @@
+<html>
+	<head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <title>Exercice 2</title>
+	</head>
+
+	<body>
+		<script>
+			html = "<p>Voici les tables de multiplication.</p>"
+			html +="<p>"
+            html +="</p>"
+            html +="<table>"
+
+			
+			for(var i=1;i<11;i++){
+			    for(var y=1;y<11;y++){
+                    html += '<td>'+i*y+'</td>';
+                }
+                html+= "</tr>";
+			}
+
+            html += "</table>"
+            document.write(html);
+		</script>
+	</body>
+	
+</html>

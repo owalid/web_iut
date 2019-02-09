@@ -1,0 +1,44 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="Exercice JavaScript sur les Dates">
+	<meta name="keywords" content="HTML, JavaScript">
+	<meta name="author" content="Julien CIAFFI">
+</head>
+	<body>
+	
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rutrum, dolor ut luctus dictum, lorem tellus porta magna, eget pharetra quam neque et eros. In rutrum nisl in dapibus convallis. Praesent iaculis tempus elit. Duis et feugiat neque. Mauris lectus purus, lacinia ut urna at, euismod semper ex. Duis dictum nisi at ipsum auctor suscipit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque quis accumsan justo, ut lobortis lacus.</p>
+
+	<p>Proin eleifend fringilla volutpat. Mauris aliquet eleifend finibus. Ut dapibus tincidunt lectus, id porta tellus condimentum et. Vivamus condimentum diam rhoncus orci blandit gravida. Duis a facilisis sapien. Cras sit amet sem vitae tellus scelerisque laoreet. Suspendisse eu fringilla massa, eget tempor dui. Nulla facilisi.</p>
+	
+	<div id="last_modif"> dernière modif ???? </div>
+	
+		<script>
+			var jours = ['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi']
+			var mois = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre']
+
+			// écris ci-dessous
+
+			var nom = document.querySelectorAll('meta[name="author"]')[0].getAttribute("content");
+			console.log(nom);
+
+			var date = new Date(document.lastModified);
+			var month = mois[date.getMonth()];
+			var day = jours[date.getDay()];
+			var minute = date.getMinutes();
+			var hour =	date.getHours();
+
+			console.log(date.getDate());
+
+
+			var str = "modifier par " + nom + " le " + day +" " + date.getDate()+" " + month + " a " + hour +" 	h" + minute;
+
+			document.getElementById('last_modif').innerHTML = str;
+
+
+
+
+		</script>
+	
+	</body>
+</html>

@@ -1,0 +1,72 @@
+<html>
+	<head>
+		<title>Exercice 7</title>
+	</head>
+
+	<body>
+		<script>
+			monObjet={
+				Louis : 12,
+				Victor : 52,
+				Pierre : 4,
+				Frank : 47,
+				Robert : 23,
+				Nadine : 42,
+				Mila : 85,
+				Maud : 41,
+				Ellen : 64,
+				Gaston : 88,
+				Vincent : 70,
+				Marc : 79,
+				Emile : 70,
+				Suzanne : 96
+			}
+			
+			document.write("L'age de Gaston est :")
+			document.write(monObjet.Gaston)		// (Q1) affiche la valeur de la propriété Gaston
+			
+			// (Q2) ajoute Martine qui a 4 ans.
+            monObjet.Martine = 4;
+			
+			// (Q3) Calcule la somme des ages
+            var somme=0
+            for(propriete in monObjet){
+                somme += monObjet[propriete];
+            }
+			document.write("</br>La somme des ages est :")
+			document.write(somme)
+	
+			// (Q4) Définis la méthode gr() dans l'objet monObjet. Elle retourne la somme des ages de Gaston et Robert
+			monObjet.gr = function () {
+                return(this.Gaston + this.Robert);
+            };
+			
+			
+			
+			document.write("</br>La somme des ages de Gaston et Robert est :")
+			document.write(monObjet.gr())			
+			
+			document.write("<p>devinette 1</p>")
+			// (Q5) Devine ce que va afficher la ligne suivante ?
+			//document.write(monObjet.gr)
+			
+			document.write("<p>devinette 2</p>")
+			// (Q6) Définis la méthode sommeAges() dans l'objet monObjet. Tu peux ré-utiliser la question 3.
+
+            monObjet.sommeAges = function () {
+                var somme=0
+                for (propriete in this) {
+                    value = this[propriete];
+                    if (typeof value == "number"){
+                        somme += value
+                    }
+                }
+                return somme;
+            };
+			
+			document.write(monObjet.sommeAges())
+			
+		</script>
+	</body>
+	
+</html>

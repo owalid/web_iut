@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title>Exercice 2 - correction</title>
+		<meta charset="utf-8">
+		<style>
+			h1, h2, h3, input, span { display: none;}
+			.enonce { display: block; }	
+		</style>
+	</head>
+
+	<body>
+		<h1 class="enonce">Affiche les chiffres de 1 à 7. Mais aucun X. </h1>
+		<p class="enonce">Le dernier est optionnel. </p>
+		
+		<span>X</span><span>X</span><span>X</span><span>X</span><span>X</span><span>X</span><span>X</span><span>X</span><span>X</span><span>X</span><span>X X</span><h1>X</h1><span>X X</span><span>X</span><span>X</span><span>X</span><span>X</span><span>X</span><span>X</span><span>X</span><span>X     X</span><span>X</span><span>X  X</span><h1>X</h1><span>X</span><span>X</span>
+	
+		<h1 id="premier">1</h1>
+		<input name="prenom" id="prenom" type="text" value="2"/>
+		<h2>3</h2>
+		
+		<h1 id="deuxieme">X</h1>
+		<h2>4</h2>
+		<h2>5</h2>
+		<h2>6</h2>
+		
+		<h2 id="troisieme">	<span>7</span> </h2>
+
+		<span>X</span><span>X</span><span>X</span><span>X</span><span>X</span><span>X</span><span>X</span><span>X</span><span>X</span><span>X</span><span>X</span><h1>X    X</h1><span>X</span><span>X</span><h1>X</h1><span>X</span><span>X</span><span>X</span><span>X</span><span>X</span><span>X</span><span>X</span><span>X</span>
+		
+		<script>
+			// Ecris ci-dessous.
+			// La seule méthode autorisée est querySelectorAll().
+
+            var select = document.querySelectorAll("h2,#troisieme span,#prenom,#premier");
+            for(var i=0;i<select.length;i++){select[i].style.display="block";}
+
+		</script>
+		
+	</body>
+	
+</html>
